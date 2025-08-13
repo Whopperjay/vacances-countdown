@@ -2,78 +2,67 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>⛱️ Compte à rebours avant les vacances</title>
-  <meta name="description" content="Petit site drôle et joli qui affiche le compte à rebours avant les vacances (17h)." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛱️</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>🏊 Compte à rebours – Piscine time</title>
+  <meta name="description" content="Compte à rebours avant 17h, thème piscine, avec tick façon 24h chrono." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏊</text></svg>">
   <style>
-    :root{
-      --bg1:#0f172a; /* slate-900 */
-      --bg2:#111827; /* gray-900 */
-      --card:#111827ee;
-      --txt:#e5e7eb; /* gray-200 */
-      --muted:#94a3b8; /* slate-400 */
-      --accent:#22d3ee; /* cyan-400 */
-      --accent2:#a78bfa; /* violet-400 */
-      --ok:#10b981; /* emerald */
-      --warn:#f59e0b; /* amber */
-    }
+    :root{--bg1:#0f172a;--bg2:#0b1023;--card:#0f172acc;--txt:#e5e7eb;--muted:#94a3b8;--accent:#22d3ee;--accent2:#60a5fa;--ok:#10b981;--warn:#f59e0b}
     *{box-sizing:border-box}
-    html,body{height:100%;}
+    html,body{height:100%}
     body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      color:var(--txt);
-      background: radial-gradient(1200px 800px at 20% 10%, #0b1223, transparent),
-                  radial-gradient(1200px 800px at 80% 90%, #12102a, transparent),
-                  linear-gradient(160deg,var(--bg1),var(--bg2));
+      margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--txt);
+      background:radial-gradient(1200px 800px at 20% 10%,#0b1223,transparent),
+                 radial-gradient(1200px 800px at 80% 90%,#101a2e,transparent),
+                 linear-gradient(160deg,var(--bg1),var(--bg2));
       overflow-x:hidden;
     }
-    .container{max-width:960px; margin:0 auto; padding:32px;}
-    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:24px}
-    .badge{display:inline-flex; align-items:center; gap:8px; background:linear-gradient( to right, #0ea5e9 0%, #8b5cf6 100% );
-      color:white; padding:8px 14px; border-radius:999px; font-weight:700; letter-spacing:.3px; box-shadow:0 8px 30px rgba(99,102,241,.25)}
-    .card{background:var(--card); border:1px solid rgba(148,163,184,.12); border-radius:24px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 4px; line-height:1.15}
-    .sub{color:var(--muted); font-size:clamp(14px,1.6vw,16px)}
-
-    .timer{display:grid; grid-template-columns: repeat(4, minmax(90px,1fr)); gap:14px; margin:24px 0}
-    .bloc{background:rgba(148,163,184,.06); border:1px solid rgba(148,163,184,.14); border-radius:18px; padding:18px; text-align:center}
-    .val{font-variant-numeric: tabular-nums; font-size: clamp(28px, 5.5vw, 48px); font-weight:800; letter-spacing:1px}
-    .lab{margin-top:6px; color:var(--muted); font-size:12px; letter-spacing:.6px; text-transform:uppercase}
-
-    .barwrap{margin-top:10px}
-    .bar{height:14px; background:rgba(148,163,184,.12); border:1px solid rgba(148,163,184,.16); border-radius:999px; overflow:hidden}
-    .fill{height:100%; width:0%; background:linear-gradient(90deg,var(--accent),var(--accent2)); transition:width .3s ease}
-    .eta{display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--muted); margin-top:8px}
-
-    .quips{margin-top:18px; font-size:14px; color:#d1d5db}
-
-    .foot{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:16px}
-    button, .ghost{
-      border:none; cursor:pointer; padding:10px 14px; border-radius:12px; font-weight:700; letter-spacing:.3px;
-    }
-    .btn{background:conic-gradient(from 0deg at 50% 50%, var(--accent), var(--accent2)); color:black}
-    .ghost{background:transparent; color:var(--txt); border:1px dashed rgba(148,163,184,.4)}
-
+    .container{max-width:960px;margin:0 auto;padding:24px 24px 40px;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(to right,#06b6d4 0%,#60a5fa 100%);color:black;padding:8px 14px;border-radius:999px;font-weight:800;letter-spacing:.2px;box-shadow:0 8px 30px rgba(99,102,241,.25)}
+    .card{background:var(--card);border:1px solid rgba(148,163,184,.12);border-radius:20px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    h1{font-size:clamp(24px,5vw,42px);margin:8px 0 4px;line-height:1.15}
+    .sub{color:var(--muted);font-size:clamp(13px,1.7vw,16px)}
+    .timer{display:grid;grid-template-columns:repeat(4,minmax(86px,1fr));gap:10px;margin:18px 0}
+    .bloc{background:rgba(148,163,184,.06);border:1px solid rgba(148,163,184,.14);border-radius:16px;padding:16px;text-align:center}
+    .val{font-variant-numeric:tabular-nums;font-size:clamp(28px,7vw,50px);font-weight:900;letter-spacing:1px}
+    .lab{margin-top:6px;color:var(--muted);font-size:11px;letter-spacing:.6px;text-transform:uppercase}
+    .barwrap{margin-top:6px}
+    .bar{height:14px;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.16);border-radius:999px;overflow:hidden}
+    .fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s ease}
+    .eta{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:8px}
+    .quips{margin-top:12px;font-size:14px;color:#d1d5db}
+    .foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+    button,.ghost{border:none;cursor:pointer;padding:12px 16px;border-radius:12px;font-weight:800;letter-spacing:.2px;touch-action:manipulation}
+    .btn{background:conic-gradient(from 0deg at 50% 50%,var(--accent),var(--accent2));color:black}
+    .ghost{background:transparent;color:var(--txt);border:1px dashed rgba(148,163,184,.4)}
     .center{text-align:center}
-    .big{font-size: clamp(24px, 5vw, 42px); font-weight:800}
-
-    canvas#confetti{position:fixed; inset:0; width:100%; height:100%; pointer-events:none}
+    .big{font-size:clamp(22px,6vw,40px);font-weight:900}
+    canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
     .pulse{animation:pulse 1.4s ease-in-out infinite}
     @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+    @media (max-width:640px){
+      .container{padding:16px 16px 28px}
+      header{flex-direction:column;align-items:flex-start;gap:6px}
+      .timer{grid-template-columns:repeat(2,minmax(120px,1fr));gap:12px}
+      .bloc{padding:14px}
+      .eta{font-size:12px}
+      .foot{gap:8px}
+      button,.ghost{width:100%}
+    }
   </style>
 </head>
 <body>
   <canvas id="confetti"></canvas>
   <div class="container">
     <header>
-      <div class="badge">⛱️ Bientôt en mode VACANCES</div>
+      <div class="badge">🏊 Bientôt en mode VACANCES — PISCINE</div>
       <div class="sub" id="when"></div>
     </header>
 
     <section class="card">
       <h1>Compte à rebours avant <span class="pulse">17:00</span> 🕔</h1>
-      <div class="sub">Plus que quelques instants avant de dire : « Je traite ça à mon retour. »</div>
+      <div class="sub">Bientôt l’instant sacré : <strong>“on verra ça à la rentrée”</strong>.</div>
 
       <div class="timer" role="timer" aria-live="polite">
         <div class="bloc"><div class="val" id="d">--</div><div class="lab">jours</div></div>
@@ -83,162 +72,154 @@
       </div>
 
       <div class="barwrap">
-        <div class="bar" aria-label="progression vers 17h">
-          <div class="fill" id="fill"></div>
-        </div>
+        <div class="bar" aria-label="progression vers 17h"><div class="fill" id="fill"></div></div>
         <div class="eta"><span id="eta">—</span><span id="pct">0%</span></div>
       </div>
 
-      <div class="quips" id="quip">💼 « Encore un mail et je pars. » — Quelqu'un, il y a 3 heures.</div>
+      <div class="quips" id="quip">🛟 Check-list : maillot, lunettes, bouée… et une excuse crédible pour disparaître à 16:59.</div>
 
       <div class="foot">
         <button class="btn" id="btnFullscreen">Plein écran</button>
-        <button class="ghost" id="btnBeep">Bip final</button>
+        <button class="ghost" id="btnTick">Son permanent : OFF</button>
         <button class="ghost" id="btnHideQuips">Mode sérieux 🙃</button>
       </div>
     </section>
 
-    <p class="sub" style="margin-top:16px">Astuce : mets cette page en plein écran sur un écran secondaire pour faire saliver tout l'open-space.</p>
-
     <section class="card center" id="done" style="display:none; margin-top:16px">
-      <div class="big">🎉 C'EST L'HEURE ! Bonnes vacances ! 🎉</div>
-      <p class="sub">Ferme l'ordi. Écarte la chaise. Marchez dignement vers le soleil couchant. 🏖️</p>
+      <div class="big">🎉 C'EST L’HEURE ! Direction la PISCINE ! 🎉</div>
+      <p class="sub">Ferme l’ordi, fais le plongeon royal. 🏊‍♂️</p>
     </section>
   </div>
 
-  <audio id="ding" preload="auto">
-    <source src="data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAACcQCAAAAAAAAPAAAACAAACAAAZGF0YQAAAAA="> <!-- ultra-short silent fallback -->
-  </audio>
-
   <script>
-    // === Target: aujourd'hui à 17:00 si à venir, sinon demain à 17:00 ===
-    const now0 = new Date();
-    const target = new Date();
-    target.setHours(17,0,0,0);
+    // === Cible : aujourd’hui 17:00 si à venir, sinon demain 17:00 ===
+    const target = new Date(); target.setHours(17,0,0,0);
     if (new Date() > target) target.setDate(target.getDate()+1);
 
     const whenEl = document.getElementById('when');
-    const fmt = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'full', timeStyle: 'short' });
-    whenEl.textContent = 'Échéance : ' + fmt.format(target);
+    const fmt = new Intl.DateTimeFormat('fr-FR',{dateStyle:'full',timeStyle:'short'});
+    whenEl.textContent = 'Échéance : ' + fmt.format(target);
 
-    const dEl = document.getElementById('d');
-    const hEl = document.getElementById('h');
-    const mEl = document.getElementById('m');
-    const sEl = document.getElementById('s');
-    const fill = document.getElementById('fill');
-    const eta = document.getElementById('eta');
-    const pct = document.getElementById('pct');
-    const done = document.getElementById('done');
-    const ding = document.getElementById('ding');
+    const dEl=document.getElementById('d'), hEl=document.getElementById('h'),
+          mEl=document.getElementById('m'), sEl=document.getElementById('s'),
+          fill=document.getElementById('fill'), eta=document.getElementById('eta'),
+          pct=document.getElementById('pct'), done=document.getElementById('done');
 
-    // Quips (blagues courtes)
-    const quips = [
-      "🧠 Astuce productivité : ne rien planifier après 16:59.",
-      "🍹 Hydratation : 2L d'eau par jour… ou un très grand mojito.",
-      "📵 Réponse automatique : 'En vacances. Réponse probable : jamais.'",
-      "🕶️ Si on te cherche, tu es 'en réunion' avec la plage.",
-      "📦 Tâches à faire : 1) valises 2) rien 3) sieste.",
-      "🧴 Pense à la crème solaire. La couleur écrevisse n'est pas un style."
+    const start=new Date(); const totalMs=target-start;
+    const pad=n=>String(n).padStart(2,'0');
+
+    // === WebAudio: tick "24h" + alarme ===
+    let audioCtx, tickOn=false, tickTimer=null;
+    function initAudio(){
+      if (!audioCtx) {
+        const A = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new A();
+      }
+      if (audioCtx.state === 'suspended') audioCtx.resume().catch(()=>{});
+    }
+    function clickTick(){
+      if (!audioCtx) return;
+      const t=audioCtx.currentTime, osc=audioCtx.createOscillator(), g=audioCtx.createGain();
+      osc.type='square'; osc.frequency.value=2200;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(0.2,t+0.002);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+0.03);
+      osc.connect(g).connect(audioCtx.destination); osc.start(t); osc.stop(t+0.035);
+    }
+    function finalAlarm(){
+      if (!audioCtx) return;
+      const t0=audioCtx.currentTime;
+      for(let i=0;i<6;i++){
+        const t=t0+i*0.2, osc=audioCtx.createOscillator(), g=audioCtx.createGain();
+        osc.type='sawtooth'; osc.frequency.setValueAtTime(i%2?800:1200,t);
+        g.gain.setValueAtTime(0.0001,t);
+        g.gain.exponentialRampToValueAtTime(0.25,t+0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001,t+0.16);
+        osc.connect(g).connect(audioCtx.destination); osc.start(t); osc.stop(t+0.18);
+      }
+    }
+    function startTicks(){
+      initAudio();
+      if (tickTimer) clearInterval(tickTimer);
+      clickTick();
+      tickTimer=setInterval(clickTick,1000);
+      tickOn=true; document.getElementById('btnTick').textContent='Son permanent : ON';
+    }
+    function stopTicks(){
+      if (tickTimer) clearInterval(tickTimer);
+      tickTimer=null; tickOn=false; document.getElementById('btnTick').textContent='Son permanent : OFF';
+    }
+
+    // === Auto-start du son au premier geste utilisateur (tap/clic/touche) ===
+    const firstInteract = (e)=>{
+      startTicks();
+      window.removeEventListener('pointerdown', firstInteract);
+      window.removeEventListener('keydown', firstInteract);
+      window.removeEventListener('touchstart', firstInteract);
+    };
+    window.addEventListener('pointerdown', firstInteract, {once:true});
+    window.addEventListener('keydown', firstInteract, {once:true});
+    window.addEventListener('touchstart', firstInteract, {once:true});
+
+    // Reprendre l'audio après retour d'onglet (iOS)
+    document.addEventListener('visibilitychange', ()=>{
+      if (!audioCtx) return;
+      if (document.visibilityState==='visible' && audioCtx.state==='suspended' && tickOn){
+        audioCtx.resume().catch(()=>{});
+      }
+    });
+
+    // === Blagues piscine ===
+    const quips=[
+      "🏊 Rappel : on ne court pas autour de la piscine… sauf à 16:59.",
+      "🕶️ Dress code : tongs + sérieux professionnel (optionnel).",
+      "🛟 Objectif : 0 mails, 100% chlore.",
+      "🥤 Hydratation : sirop de grenadine au bord du bassin.",
+      "📵 Nouveau statut : « en nage libre »."
     ];
-    let quipIdx = 0;
-    const quipEl = document.getElementById('quip');
-    function rotateQuip(){
-      quipIdx = (quipIdx + 1) % quips.length;
-      quipEl.textContent = quips[quipIdx];
-    }
-    let quipTimer = setInterval(rotateQuip, 6000);
+    let quipIdx=0; const quipEl=document.getElementById('quip');
+    function rotateQuip(){ quipIdx=(quipIdx+1)%quips.length; quipEl.textContent=quips[quipIdx]; }
+    let quipTimer=setInterval(rotateQuip,6000);
 
-    // Progression relative à la fenêtre [maintenant -> target]
-    const start = new Date();
-    const totalMs = target - start;
-
-    function pad(n){return String(n).padStart(2,'0')}
-
-    let finished = false;
-    const tick = () => {
-      const now = new Date();
-      let diff = target - now;
-      if (diff <= 0) { diff = 0; }
-
-      const seconds = Math.floor(diff/1000)%60;
-      const minutes = Math.floor(diff/60000)%60;
-      const hours = Math.floor(diff/3600000)%24;
-      const days = Math.floor(diff/86400000);
-
-      dEl.textContent = days;
-      hEl.textContent = pad(hours);
-      mEl.textContent = pad(minutes);
-      sEl.textContent = pad(seconds);
-
-      // Progress bar
-      const elapsed = Math.max(0, Math.min(totalMs, now - start));
-      const p = totalMs === 0 ? 1 : elapsed / totalMs;
-      fill.style.width = (p*100).toFixed(1) + '%';
-      pct.textContent = (p*100).toFixed(1) + '%';
-      eta.textContent = diff>0 ? ('Arrive le ' + fmt.format(target)) : 'On y est !';
-
-      if (!finished && diff === 0) {
-        finished = true;
-        try{ ding.play().catch(()=>{}); }catch(e){}
-        fireConfetti(350);
-        done.style.display = 'block';
-        document.title = '🎉 Vacances !';
-        clearInterval(quipTimer);
-        quipEl.textContent = "🎈 Félicitations : vous avez officiellement rendez‑vous avec un transat.";
+    // === Timer ===
+    let finished=false;
+    function tick(){
+      const now=new Date(); let diff=target-now; if(diff<0) diff=0;
+      const s=Math.floor(diff/1000)%60, m=Math.floor(diff/60000)%60, h=Math.floor(diff/3600000)%24, d=Math.floor(diff/86400000);
+      dEl.textContent=d; hEl.textContent=pad(h); mEl.textContent=pad(m); sEl.textContent=pad(s);
+      const elapsed=Math.max(0,Math.min(totalMs,now-start)); const p=totalMs===0?1:elapsed/totalMs;
+      fill.style.width=(p*100).toFixed(1)+'%'; pct.textContent=(p*100).toFixed(1)+'%';
+      eta.textContent=diff>0?('Arrive le '+fmt.format(target)):'On y est !';
+      if(!finished && diff===0){
+        finished=true; stopTicks(); fireConfetti(400); finalAlarm(); done.style.display='block';
+        document.title='🎉 Piscine !'; clearInterval(quipTimer);
+        quipEl.textContent="🛟 Félicitations : autorisé à cannonball.";
       }
     }
-    tick();
-    const timerId = setInterval(tick, 250);
+    tick(); setInterval(tick,250);
 
-    // Plein écran & bip
-    document.getElementById('btnFullscreen').onclick = () => {
-      const el = document.documentElement;
-      if (document.fullscreenElement) { document.exitFullscreen(); }
-      else if (el.requestFullscreen) { el.requestFullscreen(); }
-    }
-    let beepOn = false;
-    document.getElementById('btnBeep').onclick = (e)=>{
-      beepOn = !beepOn;
-      e.target.textContent = beepOn ? 'Bip final ✅' : 'Bip final';
-      // charge un petit beep dans l'audio tag
-      document.getElementById('ding').src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABYAAAABAAABAQAA//8AAP//AP8AAAD//wD///8=';
-    }
+    // === UI ===
+    document.getElementById('btnFullscreen').onclick=()=>{
+      const el=document.documentElement;
+      if(document.fullscreenElement) document.exitFullscreen();
+      else if(el.requestFullscreen) el.requestFullscreen();
+    };
+    document.getElementById('btnTick').onclick=()=>{ (tickOn?stopTicks:startTicks)(); };
+    document.getElementById('btnHideQuips').onclick=(e)=>{
+      const vis=quipEl.style.display!=='none'; quipEl.style.display=vis?'none':'block';
+      e.target.textContent=vis?'Mode fun':'Mode sérieux 🙃';
+    };
 
-    document.getElementById('btnHideQuips').onclick = (e)=>{
-      const vis = quipEl.style.display !== 'none';
-      quipEl.style.display = vis ? 'none' : 'block';
-      e.target.textContent = vis ? 'Mode fun' : 'Mode sérieux 🙃';
-    }
-
-    // === Mini confetti maison ===
-    const canvas = document.getElementById('confetti');
-    const ctx = canvas.getContext('2d');
-    let confettiParticles = [];
-    function resize(){canvas.width = innerWidth; canvas.height = innerHeight}
-    addEventListener('resize', resize); resize();
-
-    function fireConfetti(n=200){
-      confettiParticles = Array.from({length:n}).map(()=>({
-        x: Math.random()*canvas.width,
-        y: -20,
-        r: 2 + Math.random()*4,
-        a: Math.random()*Math.PI*2,
-        s: 1 + Math.random()*3,
-        w: 0.5 + Math.random(),
-        hue: Math.floor(Math.random()*360)
-      }));
-      let t0 = null;
-      function anim(ts){
-        if(!t0) t0 = ts; const dt = (ts - t0)/16; t0 = ts;
+    // === Confetti ===
+    const canvas=document.getElementById('confetti'); const ctx=canvas.getContext('2d'); let confettiParticles=[];
+    function resize(){canvas.width=innerWidth;canvas.height=innerHeight} addEventListener('resize',resize); resize();
+    function fireConfetti(n=220){
+      confettiParticles=Array.from({length:n}).map(()=>({x:Math.random()*canvas.width,y:-20,r:2+Math.random()*4,a:Math.random()*Math.PI*2,s:1+Math.random()*3,w:0.5+Math.random(),hue:Math.floor(Math.random()*360)}));
+      let t0=null; function anim(ts){ if(!t0) t0=ts; const dt=(ts-t0)/16; t0=ts;
         ctx.clearRect(0,0,canvas.width,canvas.height);
-        confettiParticles.forEach(p=>{
-          p.y += p.s*dt; p.x += Math.sin(p.a+=0.02)*p.w*dt;
-          ctx.fillStyle = `hsl(${p.hue},90%,60%)`;
-          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
-        });
-        if (confettiParticles.some(p=>p.y < canvas.height+10)) requestAnimationFrame(anim);
-      }
-      requestAnimationFrame(anim);
+        confettiParticles.forEach(p=>{p.y+=p.s*dt; p.x+=Math.sin(p.a+=0.02)*p.w*dt; ctx.fillStyle=`hsl(${p.hue},90%,60%)`; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();});
+        if(confettiParticles.some(p=>p.y<canvas.height+10)) requestAnimationFrame(anim);
+      } requestAnimationFrame(anim);
     }
   </script>
 </body>
